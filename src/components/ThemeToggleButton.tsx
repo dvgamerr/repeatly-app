@@ -11,7 +11,7 @@ export function ThemeToggleButton() {
       variant="ghost"
       size="icon"
       aria-label="Toggle theme"
-      className="fixed top-4 right-4 z-50"
+      className="border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/80 shadow-sm"
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       {resolvedTheme === "dark" ? (

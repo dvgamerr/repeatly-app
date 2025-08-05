@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ThemeToggleButton } from "@/components/ThemeToggleButton";
-import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { Navbar } from "@/components/Navbar";
 
 type Activity = {
   id: number;
@@ -49,8 +48,7 @@ const activities: Activity[] = [
 export default function Activities() {
   return (
     <div className="min-h-screen bg-[#f5f6fa] dark:bg-[#18181b] transition-colors duration-500">
-      <ThemeToggleButton />
-      <HamburgerMenu />
+      <Navbar />
       <div className="max-w-2xl mx-auto py-12 px-2">
         <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
           <CardHeader>

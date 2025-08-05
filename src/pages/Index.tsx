@@ -2,8 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AssetList, Asset } from "@/components/AssetList";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { ArrowUpRight, ArrowDownRight } from "lucide-react";
-import { ThemeToggleButton } from "@/components/ThemeToggleButton";
-import { HamburgerMenu } from "@/components/HamburgerMenu";
+import { Navbar } from "@/components/Navbar";
 
 const assets: Asset[] = [
   { name: "เงินฝากธนาคาร", value: 120000, type: "เงินสด" },
@@ -21,8 +20,7 @@ const profitPercent = (profit / (total - profit)) * 100;
 export default function Index() {
   return (
     <div className="min-h-screen bg-[#f5f6fa] dark:bg-[#18181b] transition-colors duration-500">
-      <ThemeToggleButton />
-      <HamburgerMenu />
+      <Navbar />
       <div className="max-w-3xl mx-auto py-12 px-2 flex flex-col gap-6">
         <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
           <CardHeader className="pb-1">
