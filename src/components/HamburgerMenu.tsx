@@ -32,6 +32,7 @@ export function HamburgerMenu() {
       <SheetContent
         side="left"
         className="w-56 p-0 bg-white dark:bg-zinc-900/90 border-r border-[#ececec] dark:border-zinc-800"
+        showClose={false}
       >
         <nav className="flex flex-col gap-1 mt-8">
           {navLinks.map((link) => (
