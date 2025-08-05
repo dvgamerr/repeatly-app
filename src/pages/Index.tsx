@@ -3,6 +3,7 @@ import { AssetList, Asset } from "@/components/AssetList";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { ThemeToggleButton } from "@/components/ThemeToggleButton";
+import { HamburgerMenu } from "@/components/HamburgerMenu";
 
 const assets: Asset[] = [
   { name: "เงินฝากธนาคาร", value: 120000, type: "เงินสด" },
@@ -21,6 +22,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-[#18181b] dark:via-[#23272f] dark:to-[#18181b] transition-colors duration-500">
       <ThemeToggleButton />
+      <HamburgerMenu />
       <div className="max-w-2xl mx-auto py-12 px-4">
         <Card className="rounded-2xl shadow-xl border-0 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md">
           <CardHeader className="pb-2">
