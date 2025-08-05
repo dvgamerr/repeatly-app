@@ -48,28 +48,28 @@ const activities: Activity[] = [
 
 export default function Activities() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-[#18181b] dark:via-[#23272f] dark:to-[#18181b] transition-colors duration-500">
+    <div className="min-h-screen bg-[#f5f6fa] dark:bg-[#18181b] transition-colors duration-500">
       <ThemeToggleButton />
       <HamburgerMenu />
-      <div className="max-w-2xl mx-auto py-12 px-4">
-        <Card className="rounded-2xl shadow-xl border-0 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md">
+      <div className="max-w-2xl mx-auto py-12 px-2">
+        <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
           <CardHeader>
-            <CardTitle className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+            <CardTitle className="text-lg font-bold text-gray-900 dark:text-white">
               กิจกรรมล่าสุด
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="divide-y divide-gray-200 dark:divide-gray-800">
+            <ul className="divide-y divide-[#ececec] dark:divide-zinc-800">
               {activities.map((activity) => (
                 <li
                   key={activity.id}
-                  className="flex items-center justify-between py-4 px-2 hover:bg-indigo-50/60 dark:hover:bg-zinc-800/60 rounded transition-colors"
+                  className="flex items-center justify-between py-3 px-1 hover:bg-gray-50 dark:hover:bg-zinc-800/40 rounded transition-colors"
                 >
                   <div>
-                    <div className="font-semibold text-gray-800 dark:text-gray-100">
+                    <div className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
                       {activity.title}
                     </div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="text-xs text-gray-500 dark:text-gray-400">
                       {activity.description}
                     </div>
                     <div className="text-xs text-gray-400 mt-1">
@@ -81,7 +81,7 @@ export default function Activities() {
                     </div>
                   </div>
                   <div
-                    className={`font-mono text-lg ${
+                    className={`font-mono text-base ${
                       activity.type === "income"
                         ? "text-emerald-600 dark:text-emerald-400"
                         : "text-rose-600 dark:text-rose-400"
