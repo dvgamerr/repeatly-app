@@ -69,6 +69,7 @@ export default function Index() {
                       outerRadius={70}
                       label={({ name }) => name}
                       labelLine={false}
+                      isAnimationActive={false}
                     >
                       {assets.map((entry, idx) => (
                         <Cell key={`cell-${idx}`} fill={COLORS[idx % COLORS.length]} />
