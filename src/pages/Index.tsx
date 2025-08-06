@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AssetList, Asset } from "@/components/AssetList";
-import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 
@@ -10,8 +9,6 @@ const assets: Asset[] = [
   { name: "กองทุนรวม", value: 50000, type: "กองทุน" },
   { name: "ทองคำ", value: 30000, type: "ทอง" },
 ];
-
-const COLORS = ["#6366f1", "#22d3ee", "#f59e42", "#f43f5e"];
 
 const total = assets.reduce((sum, a) => sum + a.value, 0);
 const profit = 12000;
@@ -50,50 +47,7 @@ export default function Index() {
         </Card>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90 flex flex-col justify-center">
-            <CardHeader className="pb-1">
-              <CardTitle className="text-base font-semibold text-gray-800 dark:text-gray-200">
-                สัดส่วนทรัพย์สิน
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="w-full h-56 flex items-center justify-center">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={assets}
-                      dataKey="value"
-                      nameKey="name"
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={70}
-                      label={({ name }) => name}
-                      labelLine={false}
-                    >
-                      {assets.map((entry, idx) => (
-                        <Cell key={`cell-${idx}`} fill={COLORS[idx % COLORS.length]} />
-                      ))}
-                    </Pie>
-                    <Tooltip
-                      contentStyle={{
-                        background: "#fff",
-                        borderRadius: 10,
-                        border: "none",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                        color: "#222",
-                        fontSize: 13,
-                        padding: 8,
-                      }}
-                      wrapperStyle={{ outline: "none" }}
-                      formatter={(value: number) => `${value.toLocaleString()} ฿`}
-                    />
-                  </PieChart>
-                </ResponsiveContainer>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
+          <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90 md:col-span-2">
             <CardHeader className="pb-1">
               <CardTitle className="text-base font-semibold text-gray-800 dark:text-gray-200">
                 รายการทรัพย์สิน
