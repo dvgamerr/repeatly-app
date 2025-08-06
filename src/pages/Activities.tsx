@@ -47,7 +47,7 @@ const activities: Activity[] = [
 
 export default function Activities() {
   return (
-    <div className="min-h-screen bg-[#f5f6fa] dark:bg-[#18181b] transition-colors duration-500">
+    <div className="min-h-screen bg-[#f5f6fa] dark:bg-[#18181b] transition-colors duration-500 relative z-10">
       <Navbar />
       <div className="max-w-2xl mx-auto py-12 px-2">
         <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">

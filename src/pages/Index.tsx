@@ -19,15 +19,9 @@ const profitPercent = (profit / (total - profit)) * 100;
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-[#f5f6fa] dark:bg-[#18181b] transition-colors duration-500 relative overflow-hidden">
+    <div className="min-h-screen bg-[#f5f6fa] dark:bg-[#18181b] transition-colors duration-500 relative z-10 overflow-hidden">
       <Navbar />
-      {/* Animated Modern Background */}
-      <div className="animated-bg" aria-hidden="true">
-        <div className="animated-bg-ball animated-bg-ball1"></div>
-        <div className="animated-bg-ball animated-bg-ball2"></div>
-        <div className="animated-bg-ball animated-bg-ball3"></div>
-      </div>
-      <div className="relative z-10 max-w-3xl mx-auto py-12 px-2 flex flex-col gap-6">
+      <div className="max-w-3xl mx-auto py-12 px-2 flex flex-col gap-6">
         <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
           <CardHeader className="pb-1">
             <CardTitle className="text-lg font-bold text-gray-900 dark:text-white">
