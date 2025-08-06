@@ -67,6 +67,7 @@ export default function Index() {
                       cx="50%"
                       cy="50%"
                       outerRadius={70}
+                      innerRadius={40}
                       label={({ name }) => name}
                       labelLine={false}
                       isAnimationActive={false}
