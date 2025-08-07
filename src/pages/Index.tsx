@@ -24,27 +24,27 @@ export default function Index() {
         {/* ยอดทรัพย์สินทั้งหมด */}
         <div className="rounded-xl p-6">
           <div className="pb-1">
-            <div className="text-lg font-bold text-white drop-shadow-sm">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">
               ยอดทรัพย์สินทั้งหมด
             </div>
           </div>
           <div>
-            <div className="text-4xl font-extrabold mb-1 text-white drop-shadow-sm">
+            <div className="text-4xl font-extrabold mb-1 text-gray-800 dark:text-cyan-300">
               {total.toLocaleString()} ฿
             </div>
-            <div className="flex items-center text-sm text-white/90">
+            <div className="flex items-center text-sm text-gray-500 dark:text-gray-300">
               {profit >= 0 ? (
-                <span className="flex items-center text-emerald-200 font-semibold">
+                <span className="flex items-center text-emerald-600 dark:text-emerald-400 font-semibold">
                   <ArrowUpRight className="w-4 h-4 mr-1" />
                   +{profit.toLocaleString()} ฿ ({profitPercent.toFixed(1)}%)
                 </span>
               ) : (
-                <span className="flex items-center text-rose-200 font-semibold">
+                <span className="flex items-center text-rose-600 dark:text-rose-400 font-semibold">
                   <ArrowDownRight className="w-4 h-4 mr-1" />
                   {profit.toLocaleString()} ฿ ({profitPercent.toFixed(1)}%)
                 </span>
               )}
-              <span className="ml-2 text-xs text-white/70">(เทียบกับเดือนที่แล้ว)</span>
+              <span className="ml-2 text-xs text-gray-400">(เทียบกับเดือนที่แล้ว)</span>
             </div>
           </div>
         </div>
