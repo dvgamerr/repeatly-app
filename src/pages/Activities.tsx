@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navbar } from "@/components/Navbar";
 
 type Activity = {
@@ -50,51 +49,49 @@ export default function Activities() {
     <div className="min-h-screen transition-colors duration-500 relative z-10">
       <Navbar />
       <div className="max-w-2xl mx-auto py-12 px-2">
-        <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
-          <CardHeader>
-            <CardTitle className="text-lg font-bold text-gray-900 dark:text-white">
+        <div className="rounded-xl p-0">
+          <div className="mb-4">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">
               กิจกรรมล่าสุด
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="divide-y divide-[#ececec] dark:divide-zinc-800">
-              {activities.map((activity) => (
-                <li
-                  key={activity.id}
-                  className="flex items-center justify-between py-3 px-1 hover:bg-gray-50 dark:hover:bg-zinc-800/40 rounded transition-colors"
+            </div>
+          </div>
+          <ul className="divide-y divide-[#ececec] dark:divide-zinc-800">
+            {activities.map((activity) => (
+              <li
+                key={activity.id}
+                className="flex items-center justify-between py-3 px-1 hover:bg-gray-50 dark:hover:bg-zinc-800/40 rounded transition-colors"
+              >
+                <div>
+                  <div className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
+                    {activity.title}
+                  </div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400">
+                    {activity.description}
+                  </div>
+                  <div className="text-xs text-gray-400 mt-1">
+                    {new Date(activity.date).toLocaleDateString("th-TH", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    })}
+                  </div>
+                </div>
+                <div
+                  className={`font-mono text-base ${
+                    activity.type === "income"
+                      ? "text-emerald-600 dark:text-emerald-400"
+                      : "text-rose-600 dark:text-rose-400"
+                  }`}
                 >
-                  <div>
-                    <div className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
-                      {activity.title}
-                    </div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400">
-                      {activity.description}
-                    </div>
-                    <div className="text-xs text-gray-400 mt-1">
-                      {new Date(activity.date).toLocaleDateString("th-TH", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </div>
-                  </div>
-                  <div
-                    className={`font-mono text-base ${
-                      activity.type === "income"
-                        ? "text-emerald-600 dark:text-emerald-400"
-                        : "text-rose-600 dark:text-rose-400"
-                    }`}
-                  >
-                    {activity.amount > 0
-                      ? `+${activity.amount.toLocaleString()}`
-                      : activity.amount.toLocaleString()}{" "}
-                    ฿
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+                  {activity.amount > 0
+                    ? `+${activity.amount.toLocaleString()}`
+                    : activity.amount.toLocaleString()}{" "}
+                  ฿
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
