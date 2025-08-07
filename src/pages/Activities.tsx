@@ -49,8 +49,8 @@ export default function Activities() {
     <div className="min-h-screen transition-colors duration-500 relative z-10">
       <Navbar />
       <div className="max-w-2xl mx-auto py-12 px-2">
-        <div className="rounded-xl p-0">
-          <div className="mb-4">
+        <div className="backdrop-blur bg-white/60 dark:bg-zinc-900/60 rounded-xl shadow border border-white/40 dark:border-zinc-800 p-0">
+          <div className="mb-4 px-6 pt-6">
             <div className="text-lg font-bold text-gray-900 dark:text-white">
               กิจกรรมล่าสุด
             </div>
@@ -59,7 +59,7 @@ export default function Activities() {
             {activities.map((activity) => (
               <li
                 key={activity.id}
-                className="flex items-center justify-between py-3 px-1 hover:bg-gray-50 dark:hover:bg-zinc-800/40 rounded transition-colors"
+                className="flex items-center justify-between py-3 px-6 hover:bg-gray-50 dark:hover:bg-zinc-800/40 rounded transition-colors"
               >
                 <div>
                   <div className="font-semibold text-gray-800 dark:text-gray-100 text-sm">
