@@ -10,7 +10,7 @@ const assets: Asset[] = [
   { name: "ทองคำ", value: 30000, type: "ทอง" },
 ];
 
-const COLORS = ["#fbbf24", "#60a5fa", "#a3e635", "#f472b6"];
+const COLORS = ["#6366f1", "#22d3ee", "#f59e42", "#f43f5e"];
 
 const total = assets.reduce((sum, a) => sum + a.value, 0);
 const profit = 12000;
@@ -18,28 +18,28 @@ const profitPercent = (profit / (total - profit)) * 100;
 
 export default function Index() {
   return (
-    <div className="min-h-screen transition-colors duration-500 relative z-10 overflow-hidden bg-gradient-to-b from-[#1e3c72] via-[#2a5298] to-[#e0eafc]">
+    <div className="min-h-screen transition-colors duration-500 relative z-10 overflow-hidden">
       <Navbar />
       <div className="max-w-3xl mx-auto py-12 px-2 flex flex-col gap-6">
         {/* ยอดทรัพย์สินทั้งหมด */}
-        <div className="rounded-2xl p-6 bg-white/90 shadow-lg border border-white/60 backdrop-blur-sm">
+        <div className="rounded-xl p-6">
           <div className="pb-1">
-            <div className="text-lg font-bold text-gray-900">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">
               ยอดทรัพย์สินทั้งหมด
             </div>
           </div>
           <div>
-            <div className="text-4xl font-extrabold mb-1 text-gray-800">
+            <div className="text-4xl font-extrabold mb-1 text-gray-800 dark:text-cyan-300">
               {total.toLocaleString()} ฿
             </div>
-            <div className="flex items-center text-sm text-gray-500">
+            <div className="flex items-center text-sm text-gray-500 dark:text-gray-300">
               {profit >= 0 ? (
-                <span className="flex items-center text-emerald-600 font-semibold">
+                <span className="flex items-center text-emerald-600 dark:text-emerald-400 font-semibold">
                   <ArrowUpRight className="w-4 h-4 mr-1" />
                   +{profit.toLocaleString()} ฿ ({profitPercent.toFixed(1)}%)
                 </span>
               ) : (
-                <span className="flex items-center text-rose-600 font-semibold">
+                <span className="flex items-center text-rose-600 dark:text-rose-400 font-semibold">
                   <ArrowDownRight className="w-4 h-4 mr-1" />
                   {profit.toLocaleString()} ฿ ({profitPercent.toFixed(1)}%)
                 </span>
@@ -51,9 +51,9 @@ export default function Index() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* สัดส่วนทรัพย์สิน */}
-          <div className="rounded-2xl shadow-lg border border-white/60 bg-white/90 backdrop-blur-sm p-6 flex flex-col justify-center">
+          <div className="rounded-xl shadow border border-white/40 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 backdrop-blur p-6 flex flex-col justify-center">
             <div className="pb-1">
-              <div className="text-base font-semibold text-gray-800">
+              <div className="text-base font-semibold text-gray-800 dark:text-gray-200">
                 สัดส่วนทรัพย์สิน
               </div>
             </div>
@@ -95,9 +95,9 @@ export default function Index() {
           </div>
 
           {/* รายการทรัพย์สิน */}
-          <div className="rounded-2xl shadow-lg border border-white/60 bg-white/90 backdrop-blur-sm p-6">
+          <div className="rounded-xl shadow border border-white/40 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 backdrop-blur p-6">
             <div className="pb-1">
-              <div className="text-base font-semibold text-gray-800">
+              <div className="text-base font-semibold text-gray-800 dark:text-gray-200">
                 รายการทรัพย์สิน
               </div>
             </div>
