@@ -19,8 +19,6 @@ const profitPercent = (profit / (total - profit)) * 100;
 export default function Index() {
   return (
     <div className="min-h-screen transition-colors duration-500 relative z-10 overflow-hidden">
-      {/* Wealthfolio style background */}
-      <div className="wealthfolio-bg" aria-hidden="true"></div>
       <Navbar />
       <div className="max-w-3xl mx-auto py-12 px-2 flex flex-col gap-6">
         {/* ยอดทรัพย์สินทั้งหมด */}
@@ -107,6 +105,8 @@ export default function Index() {
           </div>
         </div>
       </div>
+      {/* Wealthfolio style background (move to last for behind all content) */}
+      <div className="wealthfolio-bg" aria-hidden="true"></div>
     </div>
   );
 }
