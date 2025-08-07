@@ -22,7 +22,7 @@ export default function Index() {
       <Navbar />
       <div className="max-w-3xl mx-auto py-12 px-2 flex flex-col gap-6">
         {/* ยอดทรัพย์สินทั้งหมด */}
-        <div className="rounded-xl shadow border border-white/40 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 backdrop-blur p-6">
+        <div className="rounded-xl shadow border border-white/40 dark:border-zinc-800 p-6">
           <div className="pb-1">
             <div className="text-lg font-bold text-gray-900 dark:text-white">
               ยอดทรัพย์สินทั้งหมด
