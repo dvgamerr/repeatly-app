@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AssetList, Asset } from "@/components/AssetList";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import { ArrowUpRight, ArrowDownRight } from "lucide-react";
@@ -22,13 +21,14 @@ export default function Index() {
     <div className="min-h-screen transition-colors duration-500 relative z-10 overflow-hidden">
       <Navbar />
       <div className="max-w-3xl mx-auto py-12 px-2 flex flex-col gap-6">
-        <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
-          <CardHeader className="pb-1">
-            <CardTitle className="text-lg font-bold text-gray-900 dark:text-white">
+        {/* ยอดทรัพย์สินทั้งหมด */}
+        <div className="rounded-xl shadow border border-white/40 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 backdrop-blur p-6">
+          <div className="pb-1">
+            <div className="text-lg font-bold text-gray-900 dark:text-white">
               ยอดทรัพย์สินทั้งหมด
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
+            </div>
+          </div>
+          <div>
             <div className="text-4xl font-extrabold mb-1 text-gray-800 dark:text-cyan-300">
               {total.toLocaleString()} ฿
             </div>
@@ -46,65 +46,63 @@ export default function Index() {
               )}
               <span className="ml-2 text-xs text-gray-400">(เทียบกับเดือนที่แล้ว)</span>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90 flex flex-col justify-center">
-            <CardHeader className="pb-1">
-              <CardTitle className="text-base font-semibold text-gray-800 dark:text-gray-200">
+          {/* สัดส่วนทรัพย์สิน */}
+          <div className="rounded-xl shadow border border-white/40 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 backdrop-blur p-6 flex flex-col justify-center">
+            <div className="pb-1">
+              <div className="text-base font-semibold text-gray-800 dark:text-gray-200">
                 สัดส่วนทรัพย์สิน
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="w-full h-56 flex items-center justify-center">
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie
-                      data={assets}
-                      dataKey="value"
-                      nameKey="name"
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={70}
-                      innerRadius={40}
-                      label={({ name }) => name}
-                      labelLine={false}
-                      isAnimationActive={false}
-                    >
-                      {assets.map((entry, idx) => (
-                        <Cell key={`cell-${idx}`} fill={COLORS[idx % COLORS.length]} />
-                      ))}
-                    </Pie>
-                    <Tooltip
-                      contentStyle={{
-                        background: "#fff",
-                        borderRadius: 10,
-                        border: "none",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                        color: "#222",
-                        fontSize: 13,
-                        padding: 8,
-                      }}
-                      wrapperStyle={{ outline: "none" }}
-                      formatter={(value: number) => `${value.toLocaleString()} ฿`}
-                    />
-                  </PieChart>
-                </ResponsiveContainer>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+            <div className="w-full h-56 flex items-center justify-center">
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie
+                    data={assets}
+                    dataKey="value"
+                    nameKey="name"
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={70}
+                    innerRadius={40}
+                    label={({ name }) => name}
+                    labelLine={false}
+                    isAnimationActive={false}
+                  >
+                    {assets.map((entry, idx) => (
+                      <Cell key={`cell-${idx}`} fill={COLORS[idx % COLORS.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip
+                    contentStyle={{
+                      background: "#fff",
+                      borderRadius: 10,
+                      border: "none",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+                      color: "#222",
+                      fontSize: 13,
+                      padding: 8,
+                    }}
+                    wrapperStyle={{ outline: "none" }}
+                    formatter={(value: number) => `${value.toLocaleString()} ฿`}
+                  />
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
+          </div>
 
-          <Card className="rounded-xl shadow-sm border border-[#ececec] dark:border-zinc-800 bg-white dark:bg-zinc-900/90">
-            <CardHeader className="pb-1">
-              <CardTitle className="text-base font-semibold text-gray-800 dark:text-gray-200">
+          {/* รายการทรัพย์สิน */}
+          <div className="rounded-xl shadow border border-white/40 dark:border-zinc-800 bg-white/60 dark:bg-zinc-900/60 backdrop-blur p-6">
+            <div className="pb-1">
+              <div className="text-base font-semibold text-gray-800 dark:text-gray-200">
                 รายการทรัพย์สิน
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <AssetList assets={assets} minimal />
-            </CardContent>
-          </Card>
+              </div>
+            </div>
+            <AssetList assets={assets} minimal />
+          </div>
         </div>
       </div>
     </div>
