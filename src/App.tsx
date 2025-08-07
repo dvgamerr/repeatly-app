@@ -17,11 +17,11 @@ const App = () => (
         <Toaster />
         <Sonner />
         {/* Animated Modern Background (global, always visible) */}
-        <div className="animated-bg" aria-hidden="true">
+        {/* <div className="animated-bg" aria-hidden="true">
           <div className="animated-bg-ball animated-bg-ball1"></div>
           <div className="animated-bg-ball animated-bg-ball2"></div>
           <div className="animated-bg-ball animated-bg-ball3"></div>
-        </div>
+        </div> */}
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
