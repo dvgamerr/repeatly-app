@@ -78,7 +78,7 @@
 /* Wealthfolio style background */
 .wealthfolio-bg {
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100vw;
@@ -101,7 +101,7 @@
   background: hsl(var(--background));
   /* Diagonal/curved cut using clip-path */
   clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
-  z-index: 1;
+  z-index: 2;
   opacity: 1;
 }
 
@@ -121,7 +121,7 @@
 .animated-bg {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
   overflow: hidden;
 }
@@ -139,7 +139,7 @@
   width: 420px;
   height: 420px;
   left: -120px;
-  top: 250px;
+  top: 45%;
   background: radial-gradient(circle at 30% 30%, #6366f1 0%, #22d3ee 100%);
   animation-delay: 0s;
 }
