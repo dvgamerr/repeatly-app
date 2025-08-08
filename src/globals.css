@@ -98,7 +98,7 @@
   bottom: -1px;
   width: 100%;
   height: 80px;
-  background: white;
+  background: hsl(var(--background));
   /* Diagonal/curved cut using clip-path */
   clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
   z-index: 1;
@@ -139,7 +139,7 @@
   width: 420px;
   height: 420px;
   left: -120px;
-  top: -100px;
+  top: 250px;
   background: radial-gradient(circle at 30% 30%, #6366f1 0%, #22d3ee 100%);
   animation-delay: 0s;
 }

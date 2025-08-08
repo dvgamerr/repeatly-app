@@ -105,8 +105,6 @@ export default function Index() {
           </div>
         </div>
       </div>
-      {/* Wealthfolio style background (move to last for behind all content) */}
-      <div className="wealthfolio-bg" aria-hidden="true"></div>
     </div>
   );
 }
