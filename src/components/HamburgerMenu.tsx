@@ -11,11 +11,14 @@ const navLinks = [
 
 export function HamburgerMenu() {
   const location = useLocation();
-  const [open, setOpen] = React.useState(false);
-
-  React.useEffect(() => {
-    setOpen(false); // close menu on route change
-  }, [location.pathname]);
+  const [menuState, setMenuState] = React.useState({
+    pathname: location.pathname,
+    open: false,
+  });
+  const open = menuState.pathname === location.pathname && menuState.open;
+  const setOpen = (nextOpen: boolean) => {
+    setMenuState({ pathname: location.pathname, open: nextOpen });
+  };
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
